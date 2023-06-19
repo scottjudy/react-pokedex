@@ -3,12 +3,14 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
-import { ThemeContext } from "./context/Context";
+import { ThemeContext,loadingContext } from "./context/Context";
+import LoadingScreen from "./components/LoadingScreen"
 
 
 function App() {
   const [pokeData, setPokeData] = useState(null);
   const [theme, setTheme] = useState(false);
+  const [loading,setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -24,12 +26,15 @@ function App() {
     <>
     <section className={theme?"dark":""}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <BrowserRouter>
-        <Header/>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </BrowserRouter>
+        <loadingContext.Provider value={{ loading, setLoading }}>
+          <BrowserRouter>
+          {loading? "" : <Header/>}
+            <Routes>
+              <Route path="/" element={loading?<LoadingScreen/> : <Home/> } />
+              <Route path="/test" element={loading?<LoadingScreen/> : <Home/> } />
+            </Routes>
+          </BrowserRouter>
+        </loadingContext.Provider>  
       </ThemeContext.Provider>
     </section>
     </>
