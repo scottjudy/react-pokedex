@@ -12,12 +12,19 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  transition: all 0.3s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 /* ! ++++++++++ POKEMON-CARD-IMG ++++++++++ */
 
 .pokemon-card img {
-  width: 20rem;
+  width: 25rem;
 }
 
 /* ! ++++++++++ POKEMON-CARD-CATCHED ++++++++++ */
