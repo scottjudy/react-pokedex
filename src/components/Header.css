@@ -1,0 +1,91 @@
+:root{
+    --black:black;
+    --white:white;
+    --blue:lightblue;
+    --brown:brown;
+    --lightgrey:lightgrey;
+    --dimgrey:dimgrey;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+header{
+    background-color: var(--blue);
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    flex-direction: column;
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+}
+
+nav div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+nav div input{
+    border-radius: 15px;
+    border: none;
+}
+
+.dark-header{
+    background-color: var(--lightgrey);
+}
+
+.dark{
+    background-color: var(--dimgrey);
+}
+
+.backbtn{
+    transform: scale(2);
+    padding: 5px;
+}
+
+.toggleactive{
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.toggle{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.toggleactive:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.toggle:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.backbtn:hover{
+    color: var(--brown);
+}
+
+
