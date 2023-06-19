@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-    <section className={theme?"dark":""}>
+    <section className={theme?"dark":"light"}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <loadingContext.Provider value={{ loading, setLoading }}>
           <BrowserRouter>

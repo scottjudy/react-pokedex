@@ -22,7 +22,7 @@ a{
 }
 
 header{
-    background-color: var(--blue);
+    background-color: lightskyblue;
     padding: 10px;
     min-height: 15vh;
 }
@@ -134,4 +134,6 @@ img{
     color: var(--brown);
 }
 
-
+.light{
+    background-color: var(--blue);
+}
