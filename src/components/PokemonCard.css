@@ -1,0 +1,55 @@
+/* ! ++++++++++ POKEMON-CARD ++++++++++ */
+
+.pokemon-card {
+  width: 30rem;
+  height: 40rem;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* ! ++++++++++ POKEMON-CARD-IMG ++++++++++ */
+
+.pokemon-card img {
+  width: 20rem;
+}
+
+/* ! ++++++++++ POKEMON-CARD-CATCHED ++++++++++ */
+
+.pokemon-card .catched {
+  width: 15rem;
+  height: 5rem;
+  background-color: green;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-card .catchedimg {
+  filter: saturate(1);
+}
+
+/* ! ++++++++++ POKEMON-CARD-NOT-CATCHED ++++++++++ */
+
+.pokemon-card .notcatched {
+  width: 15rem;
+  height: 5rem;
+  background-color: red;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-card .notcatchedimg {
+  filter: saturate(0);
+}
