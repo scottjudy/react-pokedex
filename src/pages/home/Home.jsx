@@ -1,13 +1,13 @@
 import PokemonCard from "../../components/PokemonCard";
-import { typesContext } from "../../context/Context";
+import { typesContext, searchInputContext } from "../../context/Context";
 import "./Home.css";
 import { useContext, useEffect, useState } from "react";
-import Types from "../../components/Types"
+import Types from "../../components/Types";
 
 const Home = () => {
   const [pokeData, setPokeData] = useState([]);
   const [id, setId] = useState(0);
-  const {type, setTypes} = useContext(typesContext);
+  const { type, setTypes } = useContext(typesContext);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
@@ -19,17 +19,18 @@ const Home = () => {
             const newValue = [...pokeData, newData];
             setPokeData(newValue);
             setId(id + 1);
-          }
-          )
-          console.log(type);
-      }
-      
+          });
+        console.log(type);
+        console.log(pokeData[0]);
+      })
+      .catch((error) => {
+        // console.log("Fehler", error);
+      });
+  }, [id, type]);
 
-      )
-      .catch((error) => {})
-  }, [id,type]);
+  // ! SEARCH +++++++++++++++++++++++++
 
-  const [searchInput, setsearchInput] = useState("");
+  const { searchInput, setsearchInput } = useContext(searchInputContext);
 
   const handleSearch = (e) => {
     setsearchInput(e.target.value);
@@ -39,46 +40,45 @@ const Home = () => {
     item.name.toLowerCase().includes(searchInput.toLowerCase())
   );
 
+  // ! TYPES +++++++++++++++++++++++++
+
+  const filteredTypes = pokeData.filter((item) =>
+    item.types[0].type.name.toLowerCase().includes(type.toLowerCase())
+  );
+
+  // ! SETTYPE +++++++++++++++++++++++++
+
   const setTypeFunc = (typeNum) => {
     setTypes(typeNum);
     console.log(type);
-  }
+  };
 
   return (
     <section className="home-section">
-      <article className="search-field">
-        <input
-          type="text"
-          value={searchInput}
-          onChange={handleSearch}
-          placeholder="Pokemon suchen"
-        />
-      </article>
       <article className="pokemon-card-gallery">
-        {filteredData?.map((item, index) => (
-          <div key={index}>
-            <PokemonCard
-              name={item.name}
-              img={`${item.sprites.versions["generation-v"]["black-white"].front_default}`}
-              id={item.id}
-            />
-          </div>
-        ))}
+        {filteredData
+          ?.filter((item) =>
+            item.types[0].type.name.toLowerCase().includes(type.toLowerCase())
+          )
+          .map((item, index) => (
+            <div key={index}>
+              <PokemonCard
+                name={item.name}
+                img={`${item.sprites.versions["generation-v"]["black-white"].front_default}`}
+                id={item.id}
+              />
+            </div>
+          ))}
       </article>
-
-      <a href="#openModal">Modal-Fenster öffnen</a>
-
+      <a href="#openModal"></a>
       <div id="openModal" className="modalDialog">
- <div>
-  <a href="#close" title="Schließen" className="close">X</a>
-  <h2>Modal-Fenster</h2>
-  <p>Dies ist ein modales Fenster, das mit HTML5 und CSS3 erstellt wurde.</p>
-  <Types/>
-  <a onClick={() => {setTypeFunc(0)}}>KLICK ME</a>
-  <a onClick={() => {setTypeFunc(1)}}>KLICK ME</a>
- </div>
-</div>
-
+        <div>
+          <a href="#close" title="Schließen" className="close">
+            X
+          </a>
+          <Types />
+        </div>
+      </div>
     </section>
   );
 };

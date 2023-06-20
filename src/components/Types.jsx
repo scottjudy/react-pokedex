@@ -3,23 +3,18 @@ import Pikachu from "../assets/img/pngegg.png";
 import { useContext } from "react";
 import { typesContext } from "../context/Context";
 
-
-
-
-
-
 const Types = () => {
-  const {type,setTypes} = useContext(typesContext);
+  const { type, setTypes } = useContext(typesContext);
 
   const chooseType = (event) => {
-    setTypes(event.target.textContent)
-    setTypes(prev => prev + "");
+    setTypes(event.target.textContent);
+    setTypes((prev) => prev + "");
     console.log(type);
-  }
+  };
 
-
-  
-
+  const resetType = () => {
+    setTypes("");
+  };
 
   return (
     <>
@@ -80,6 +75,9 @@ const Types = () => {
         </button>
         <button onClick={chooseType} className="typebutton">
           Normal
+        </button>
+        <button onClick={resetType} className="typebutton">
+          Reset
         </button>
       </section>
     </>
