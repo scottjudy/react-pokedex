@@ -1,0 +1,139 @@
+:root{
+    --black:black;
+    --white:white;
+    --blue:lightblue;
+    --brown:brown;
+    --lightgrey:lightgrey;
+    --dimgrey:dimgrey;
+}
+
+section{
+    min-height: 85vh;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 900;
+}
+
+header{
+    background-color: lightskyblue;
+    padding: 10px;
+    min-height: 15vh;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 100%;
+
+}
+
+img{
+    max-width: 100%;
+}
+
+.headerDiv{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    padding-top: 10px;
+
+}
+
+.headerDiv div{
+    margin: 0 auto;
+}
+
+.headerDiv input{
+    border-radius: 15px;
+    border: none;
+}
+
+.dark-header{
+    background-color: var(--lightgrey);
+}
+
+.dark{
+    background-color: var(--dimgrey);
+}
+
+
+
+.toggleactive{
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    font-size: clamp(.8rem,1.2vw,2rem);
+}
+
+.toggle{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    font-size: clamp(.8rem,1.2vw,2rem);
+
+}
+
+.backbtn{
+    padding: 5px;
+    font-size: clamp(2rem,3vw,4rem);
+}
+
+.typesbtn{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3px;
+}
+
+.typesbtn:hover > div{
+    background-color: var(--brown);
+}
+
+.typesbtn div{
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+
+.toggleactive:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.toggle:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.backbtn:hover{
+    color: var(--brown);
+}
+
+.light{
+    background-color: var(--blue);
+}
