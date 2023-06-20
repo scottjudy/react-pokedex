@@ -53,6 +53,7 @@ const Home = () => {
         ))}
       </article>
     </section>
+    </>
   );
 };
 
