@@ -4,7 +4,6 @@ import { ThemeContext } from "../context/Context";
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import { useLocation } from "react-router-dom";
-import burgerMenu from "../assets/img/burgermenu.png";
 import { typesContext, searchInputContext } from "../context/Context";
 
 const Header = () => {
