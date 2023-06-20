@@ -1,5 +1,4 @@
 import "./Types.css";
-import Pikachu from "../assets/img/pngegg.png";
 import { useContext } from "react";
 import { typesContext } from "../context/Context";
 

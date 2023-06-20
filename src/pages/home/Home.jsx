@@ -20,8 +20,6 @@ const Home = () => {
             setPokeData(newValue);
             setId(id + 1);
           });
-        console.log(type);
-        console.log(pokeData[0]);
       })
       .catch((error) => {
         // console.log("Fehler", error);
