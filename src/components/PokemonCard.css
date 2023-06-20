@@ -24,7 +24,7 @@
 /* ! ++++++++++ POKEMON-CARD-IMG ++++++++++ */
 
 .pokemon-card img {
-  width: 25rem;
+  width: 20rem;
 }
 
 /* ! ++++++++++ POKEMON-CARD-CATCHED ++++++++++ */
@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pokemon-card .catchedimg {
@@ -55,8 +56,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pokemon-card .notcatchedimg {
   filter: saturate(0);
+}
+
+/* ! ++++++++++ DETAILS-BUTTON ++++++++++ */
+
+.pokemon-card button {
+  width: 12rem;
+  height: 3rem;
+  background-color: white;
+  border: none;
+  border-radius: 1rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pokemon-card button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
