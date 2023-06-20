@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/Home";
+import Types from "./Pages/type/Types";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Types />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -27,3 +27,6 @@ function App() {
 }
 
 export default App;
+
+
+// Test für Timo O
