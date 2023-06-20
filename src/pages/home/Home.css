@@ -1,1 +1,36 @@
 
+/* ! ++++++++++ HOME-SECTION ++++++++++ */
+
+.home-section {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* ! ++++++++++ SEARCH-FIELD ++++++++++ */
+
+.search-field {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-field input {
+  width: 20rem;
+  height: 4rem;
+  text-align: center;
+  border: none;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+
+/* ! ++++++++++ POKEMON-CARD-GALLERY ++++++++++ */
+
+.pokemon-card-gallery {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

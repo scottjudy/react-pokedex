@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home/Home";
 import Types from "./Pages/type/Types";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
@@ -31,7 +32,7 @@ function App() {
           {loading? "" : <Header/>}
             <Routes>
               <Route path="/" element={loading?<LoadingScreen/> : <Home/> } />
-              <Route path="/test" element={loading?<LoadingScreen/> : <Home/> } />
+              <Route path="/:id" />
             </Routes>
           </BrowserRouter>
         </loadingContext.Provider>  
