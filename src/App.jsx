@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/Home";
+import Types from "./Pages/type/Types";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { ThemeContext,loadingContext } from "./context/Context";
