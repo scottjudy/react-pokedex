@@ -1,10 +1,13 @@
 import PokemonCard from "../../components/PokemonCard";
+import { typesContext } from "../../context/Context";
 import "./Home.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Types from "../../components/Types"
 
 const Home = () => {
   const [pokeData, setPokeData] = useState([]);
   const [id, setId] = useState(0);
+  const {type, setTypes} = useContext(typesContext);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
@@ -16,9 +19,15 @@ const Home = () => {
             const newValue = [...pokeData, newData];
             setPokeData(newValue);
             setId(id + 1);
-          });
-      });
-  }, [id]);
+          }
+          )
+          console.log(type);
+      }
+      
+
+      )
+      .catch((error) => {})
+  }, [id,type]);
 
   const [searchInput, setsearchInput] = useState("");
 
@@ -29,6 +38,11 @@ const Home = () => {
   const filteredData = pokeData.filter((item) =>
     item.name.toLowerCase().includes(searchInput.toLowerCase())
   );
+
+  const setTypeFunc = (typeNum) => {
+    setTypes(typeNum);
+    console.log(type);
+  }
 
   return (
     <section className="home-section">
@@ -51,6 +65,20 @@ const Home = () => {
           </div>
         ))}
       </article>
+
+      <a href="#openModal">Modal-Fenster öffnen</a>
+
+      <div id="openModal" className="modalDialog">
+ <div>
+  <a href="#close" title="Schließen" className="close">X</a>
+  <h2>Modal-Fenster</h2>
+  <p>Dies ist ein modales Fenster, das mit HTML5 und CSS3 erstellt wurde.</p>
+  <Types/>
+  <a onClick={() => {setTypeFunc(0)}}>KLICK ME</a>
+  <a onClick={() => {setTypeFunc(1)}}>KLICK ME</a>
+ </div>
+</div>
+
     </section>
   );
 };
